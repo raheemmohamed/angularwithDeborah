@@ -23,7 +23,7 @@
     <tbody>
         <tr *ngFor="let product of filter">
             <td><img  *ngIf='showImage' title='product.productName' [src]='product.imageUrl' [style.width.px]='width' [style.margin.px]='margin'></td>
-            <td>{{product.productName}}</td>
+            <td><a [routerLink]="['/products',product.productId]">{{product.productName}}</a></td>
             <td>{{product.productCode | lowercase | convertSpace: '-'}}</td>
             <td>{{product.price | currency:'USD':'symbol':'1.2-2'}}</td>
             <td>{{product.starRating}}</td>
